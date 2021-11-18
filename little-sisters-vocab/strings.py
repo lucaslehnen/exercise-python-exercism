@@ -1,3 +1,4 @@
+""" Exercism awnser"""
 def add_prefix_un(word):
     """
 
@@ -8,7 +9,7 @@ def add_prefix_un(word):
     returns a new word with an 'un' prefix.
     """
 
-    pass
+    return 'un' + word
 
 
 def make_word_groups(vocab_words):
@@ -23,7 +24,7 @@ def make_word_groups(vocab_words):
      by ' :: '.
     """
 
-    pass
+    return (' :: ' + vocab_words[0]).join(vocab_words)
 
 
 def remove_suffix_ness(word):
@@ -34,8 +35,9 @@ def remove_suffix_ness(word):
 
     This function takes in a word and returns the base word with `ness` removed.
     """
-
-    pass
+    if word[-5] == 'i':
+        return word[:-5] + 'y'
+    return word[:-4]
 
 
 def noun_to_verb(sentence, index):
@@ -50,5 +52,8 @@ def noun_to_verb(sentence, index):
     is split apart.  The function should return the extracted
     adjective as a verb.
     """
-
-    pass
+    words = sentence.split(' ')
+    verb = words[index]
+    if verb[-1] == '.':
+        verb = verb[:-1]
+    return verb + 'en'
